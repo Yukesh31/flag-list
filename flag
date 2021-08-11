@@ -1,0 +1,95 @@
+"JS FILE":
+function createflag(countriesinfo,index){
+    const info=document.createElement("div")
+    info.setAttribute("class","container");
+     info.innerHTML=`
+     <div class="flag-container">
+     <img class="flag" src=${countriesinfo[index].flag} width="250px" height="150px" >
+     </div>
+
+     <div class="details">
+     <h3>${countriesinfo[index].name}</h3>
+     <p><b>Population:</b>${countriesinfo[index].population}</p>
+     <p><b>Region:</b>${countriesinfo[index].region}</p>
+     <p><b>Capital:</b>${countriesinfo[index].capital}</p>
+     </div>
+     </div>
+     `
+     document.body.append(info);
+}
+let countriesinfo=[
+    {
+        name:"INDIA",
+        population:"1,370,508,600",
+        region:"Asia",
+        capital:"New Delhi",
+        flag: "https://restcountries.eu/data/ind.svg",
+
+    },
+    {
+        name:"Germany",
+        population:"999,888,777",
+        region:"Europe",
+        capital:"Berlin",
+        flag: "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png",
+    },
+    {
+        name:"Afghanistan",
+        population:"27,657,145",
+        region:"Asia",
+        capital:"Kabul",
+        flag: "https://restcountries.eu/data/afg.svg",
+
+    },
+    {
+        name:"switzerland",
+        population:"8,724,324",
+        region:"Europe",
+        capital:"Bern",
+        flag: "https://restcountries.eu/data/che.svg",
+    },
+    {
+    name:"USA",
+        population:"323,947,000",
+        region:"Americas",
+        capital:"Washington.D.C",
+        flag: "https://restcountries.eu/data/usa.svg",
+    }
+];
+
+for(let index=0;index<countriesinfo.length;index++)
+{
+    createflag(countriesinfo,index);
+}
+
+
+
+"CSS FILE":
+flag{
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  
+}
+
+.container {
+    width: 250px;
+  height:320px;
+    background-color: white;
+    overflow: hidden;
+  margin-top:5px;
+  margin-right:16px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(102 100 100);
+  display:inline-block;
+  padding-bottom:6px;
+  
+}
+.details{
+  padding:10px;
+}
+.container:hover{
+  cursor:pointer;
+    background-color:purple;
+    
+}
